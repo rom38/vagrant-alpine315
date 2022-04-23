@@ -111,12 +111,12 @@ build {
       vagrantfile_template = "./Vagrantfile"
     }
 
-    post-processor "vagrant-cloud" {
-      access_token        = "${var.cloud_token}"
-      box_tag             = "xeptore/alpine315-docker"
-      version             = "${var.version}"
-      version_description = "${var.version_description}"
-    }
+#     post-processor "vagrant-cloud" {
+#       access_token        = "${var.cloud_token}"
+#       box_tag             = "xeptore/alpine315-docker"
+#       version             = "${var.version}"
+#       version_description = "${var.version_description}"
+#     }
 
     post-processor "artifice" {
       keep_input_artifact = false
