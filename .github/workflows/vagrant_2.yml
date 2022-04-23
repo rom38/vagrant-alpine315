@@ -32,7 +32,7 @@ jobs:
       - name: Meta
         id: meta
         run: |
-          BUILD_DATE_TIME=$(gdate --iso-8601=seconds)
+          BUILD_DATE_TIME=$(date --iso-8601=seconds)
           echo ::set-output name=build_date_time::$BUILD_DATE_TIME
           VERSION=$(date --date="$BUILD_DATE_TIME" '+%Y%m%d.%-H.%-M')
           TAG_NAME=$(printf 'v%s' $VERSION)
