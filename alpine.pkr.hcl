@@ -119,13 +119,14 @@ build {
 #     }
 
     post-processor "artifice" {
-      keep_input_artifact = false
+#       keep_input_artifact = false
       files = [
         "./alpine315-docker.box",
       ]
     }
 
     post-processor "checksum" {
+      keep_input_artifact = false
       checksum_types = ["sha512"]
       output         = "build.checksum"
     }
