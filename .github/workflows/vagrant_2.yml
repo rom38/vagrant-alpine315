@@ -34,7 +34,7 @@ jobs:
         run: |
           BUILD_DATE_TIME=$(gdate --iso-8601=seconds)
           echo ::set-output name=build_date_time::$BUILD_DATE_TIME
-          VERSION=$(gdate --date="$BUILD_DATE_TIME" '+%Y%m%d.%-H.%-M')
+          VERSION=$(date --date="$BUILD_DATE_TIME" '+%Y%m%d.%-H.%-M')
           TAG_NAME=$(printf 'v%s' $VERSION)
           echo ::set-output name=version::$VERSION
           echo ::set-output name=tag_name::$TAG_NAME
