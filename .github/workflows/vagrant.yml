@@ -41,17 +41,18 @@ jobs:
           echo "box_description<<EOF" >> $GITHUB_ENV
           echo "$BOX_DESCRIPTION" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
-      - name: Import GPG key
-        uses: crazy-max/ghaction-import-gpg@v4
-        with:
-          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
-          passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
-          git_user_signingkey: true
-          git_commit_gpgsign: true
+#      - name: Import GPG key
+#        uses: crazy-max/ghaction-import-gpg@v4
+#        with:
+#          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+#          passphrase: ${{ secrets.GPG_PRIVATE_KEY_PASSPHRASE }}
+#          git_user_signingkey: true
+#          git_commit_gpgsign: true
       - name: Create Tag
         run: |
-          git tag -sa ${{ steps.meta.outputs.tag_name }} -m ${{ steps.meta.outputs.tag_name }}
+          git tag -a ${{ steps.meta.outputs.tag_name }} -m ${{ steps.meta.outputs.tag_name }}
           git push --follow-tags
+#         git tag -sa ${{ steps.meta.outputs.tag_name }} -m ${{ steps.meta.outputs.tag_name }}
       - name: Install VirtualBox
         run: |
           curl https://download.virtualbox.org/virtualbox/6.1.30/VirtualBox-6.1.30-148432-OSX.dmg --output vb.dmg
