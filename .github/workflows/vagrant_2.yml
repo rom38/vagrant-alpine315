@@ -38,7 +38,7 @@ jobs:
           TAG_NAME=$(printf 'v%s' $VERSION)
           echo ::set-output name=version::$VERSION
           echo ::set-output name=tag_name::$TAG_NAME
-          BUILD_AT=$(gdate --date="$BUILD_DATE_TIME" --rfc-3339=seconds)
+          BUILD_AT=$(date --date="$BUILD_DATE_TIME" --rfc-3339=seconds)
           BOX_DESCRIPTION=$(cat << EOF
           Automated build at $BUILD_AT
           Project is hosted on GitHub at: <https://github.com/game-sales-analytics/vagrant-alpine315-docker/>
