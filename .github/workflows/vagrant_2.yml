@@ -81,7 +81,7 @@ jobs:
         with:
           command: build
 #           arguments: -force -var 'version=${{ steps.meta.outputs.version }}' -var 'version_description=${{ env.box_description }}' -var 'cloud_token=${{ secrets.VAGRANT_CLOUD_TOKEN }}'"
-          arguments: -force -var version=${{ steps.meta.outputs.version }} -var cloud_token=${{ secrets.VAGRANT_CLOUD_TOKEN }}
+          arguments: -force -var version=${{ steps.meta.outputs.version }} -var cloud_token=${{ secrets.VAGRANT_CLOUD_TOKEN }} -var version_description=${{ env.box_description }}
           target:  alpine.pkr.hcl
           # working_directory: infrastructure/packer
           
